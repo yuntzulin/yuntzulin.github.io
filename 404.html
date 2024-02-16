@@ -9,7 +9,7 @@
     
     <title>
         
-            test for theme |
+            404 |
         
         Hack Mousy
     </title>
@@ -184,152 +184,15 @@
             <div class="main-content border-box">
                 
 
-                    
-<div class="fade-in-down-animation">
-    <div class="post-page-container border-box">
-        <div class="post-content-container border-box">
-            
-
-            <div class="post-content-bottom border-box">
-                
-                    <div class="post-title">
-                        test for theme
-                    </div>
-                
-
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/hackmousy.jpg">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">hackmousy</span>
-                                
-                                    <span class="author-badge">Lv1</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-02-14 19:51:31</span>
-            </span>
-
-            <span class="meta-info-item post-update-date">
-                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Wed Feb 14 2024 19:55:53 GMT-0500">2024-02-14 19:55:53</span>
-            </span>
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="post-content keep-markdown-body">
-                    
-
-                    <hr>
-<h2 id="title-0CTF-2023-筆記date-2023-12-11-13-40-00catalog-truetags-Security-categories-Security-photos-img-0ctf-2023-writeup-cover-png"><a href="#title-0CTF-2023-筆記date-2023-12-11-13-40-00catalog-truetags-Security-categories-Security-photos-img-0ctf-2023-writeup-cover-png" class="headerlink" title="title: 0CTF 2023 筆記date: 2023-12-11 13:40:00catalog: truetags: [Security]categories: [Security]photos: &#x2F;img&#x2F;0ctf-2023-writeup&#x2F;cover.png"></a>title: 0CTF 2023 筆記<br>date: 2023-12-11 13:40:00<br>catalog: true<br>tags: [Security]<br>categories: [Security]<br>photos: &#x2F;img&#x2F;0ctf-2023-writeup&#x2F;cover.png</h2><p>今年的 0CTF 一共有三道 web 題，其中一道題目是 client-side 的，我就只解這題而已，順利拿到 first blood，這篇簡單記錄一下心得。</p>
-<p>關鍵字列表：</p>
-<ol>
-<li>CSS injection</li>
-<li>CSS exfiltration</li>
-</ol>
-<span id="more"></span>
-
-<h2 id="Web-newdiary-14-solves"><a href="#Web-newdiary-14-solves" class="headerlink" title="Web - newdiary (14 solves)"></a>Web - newdiary (14 solves)</h2><p>題目就是個典型的 note app，可以建立筆記然後回報給 admin bot，筆記只有限制長度，並沒有做過濾，在 client 也是直接用 innerHTML，所以很明顯有 HTML injection：</p>
-<pre><code class="js">load = () =&gt; &#123;
-    document.getElementById(&quot;title&quot;).innerHTML = &quot;&quot;
-    document.getElementById(&quot;content&quot;).innerHTML = &quot;&quot;
-    const param = new URLSearchParams(location.hash.slice(1));
-    const id = param.get(&#39;id&#39;);
-    let username = param.get(&#39;username&#39;);
-    if (id &amp;&amp; /^[0-9a-f]+$/.test(id)) &#123;
-        if (username === null) &#123;
-            fetch(`/share/read/$&#123;id&#125;`).then(data =&gt; data.json()).then(data =&gt; &#123;
-                const title = document.createElement(&#39;p&#39;);
-                title.innerText = data.title;
-                document.getElementById(&quot;title&quot;).appendChild(title);
-        
-                const content = document.createElement(&#39;p&#39;);
-                content.innerHTML = data.content;
-                document.getElementById(&quot;content&quot;).appendC
-</code></pre>
-
-                </div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                </div>
-
-                
-
-                
-                    <div class="post-nav border-box">
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2024/02/14/hello-world/"
-                                   title="Hello World"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Hello World</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
-                
-
-                
-                    
-
-
-
-
-
-
-                
-            </div>
+                    <div class="fade-in-down-animation">
+    <div class="error-404-container border-box">
+        <div class="text-1 border-box flex-center">404</div>
+        <div class="text-2 border-box flex-center">
+            Page Not Found
         </div>
-
-        
+        <div class="text-3 border-box flex-center">
+            <a class="go-home" href="/">Take me home</a>
+        </div>
     </div>
 </div>
 
@@ -374,19 +237,6 @@
     </div>
 
     <!-- post tools -->
-    
-        <div class="post-tools right-toc">
-            <div class="post-tools-container border-box">
-    <ul class="tools-list border-box">
-        <!-- PC TOC show toggle -->
-        
-
-        <!-- PC go comment -->
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <!-- side tools -->
@@ -503,20 +353,6 @@
 
 
 <div class="">
-    
-        <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
-
-        <!-- toc -->
-        
-
-        <!-- copyright-info -->
-        
-
-        <!-- share -->
-        
     
 
     <!-- category-page -->
